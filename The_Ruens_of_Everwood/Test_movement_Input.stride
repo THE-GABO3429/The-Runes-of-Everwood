@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class name="Test_movement_Input" extends="World" extends-java="World" enable="true" strideversion="1">
+    <javadoc xml:space="preserve"/>
+    <imports>
+        <import target="java.util.*" enable="true"/>
+        <import target="greenfoot.*" enable="true"/>
+    </imports>
+    <implements/>
+    <fields/>
+    <constructors>
+        <constructor access="public" enable="true">
+            <javadoc xml:space="preserve">Constructor for objects of class Test_movement_Input.</javadoc>
+            <params/>
+            <throws/>
+            <delegate target="super" params="600,600,1" params-java="600, 600, 1"/>
+            <body>
+                <call expression="ifAtEdge()" expression-java="ifAtEdge()" enable="false"/>
+            </body>
+        </constructor>
+    </constructors>
+    <methods>
+        <method access="public" type="boolean" type-java="boolean" name="ifAtEdge" enable="false">
+            <javadoc xml:space="preserve"/>
+            <params/>
+            <throws/>
+            <body>
+                <variable type="Actor" type-java="Actor" name="player_in_question" value="new player_in_question()" value-java=" new player_in_question()" enable="false"/>
+                <if condition="" condition-java="" enable="false">
+                    <ifStatements>
+                        <variable type="World" type-java="World" name="Test_Transition" value="new Test_Transition()" value-java=" new Test_Transition()" enable="false"/>
+                        <call expression="Greenfoot.setWorld(Test_Transition)" expression-java="Greenfoot.setWorld(Test_Transition)" enable="false"/>
+                        <return value="true" value-java="true" enable="false"/>
+                    </ifStatements>
+                </if>
+                <return value="false" value-java="false" enable="false"/>
+            </body>
+        </method>
+    </methods>
+</class>

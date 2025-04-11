@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class name="Test_Transition" extends="World" extends-java="World" enable="true" strideversion="1">
+    <javadoc xml:space="preserve"/>
+    <imports>
+        <import target="java.util.*" enable="true"/>
+        <import target="greenfoot.*" enable="true"/>
+    </imports>
+    <implements/>
+    <fields/>
+    <constructors>
+        <constructor access="public" enable="true">
+            <javadoc xml:space="preserve">Constructor for objects of class Test_Transition.</javadoc>
+            <params/>
+            <throws/>
+            <delegate target="super" params="600,600,1" params-java="600, 600, 1"/>
+            <body>
+                <call expression="setPlayer()" expression-java="setPlayer()" enable="true"/>
+            </body>
+        </constructor>
+    </constructors>
+    <methods>
+        <method access="public" type="void" type-java="void" name="setPlayer" enable="true">
+            <javadoc xml:space="preserve"/>
+            <params/>
+            <throws/>
+            <body>
+                <variable type="Actor" type-java="Actor" name="player_in_question" value="new player_in_question()" value-java=" new player_in_question()" enable="true"/>
+                <call expression="addObject(player_in_question,0,100)" expression-java="addObject(player_in_question, 0, 100)" enable="true"/>
+            </body>
+        </method>
+    </methods>
+</class>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class name="Button1" extends="Actor" extends-java="Actor" enable="true" strideversion="1">
+    <javadoc xml:space="preserve">Write a description of class Option1_Button here.
+@author (your name) @version (a version number or a date)</javadoc>
+    <imports>
+        <import target="greenfoot.*" enable="true"/>
+    </imports>
+    <implements/>
+    <fields/>
+    <constructors/>
+    <methods>
+        <comment xml:space="preserve">(World, Actor, GreenfootImage, Greenfoot and MouseInfo)</comment>
+        <method access="public" type="void" type-java="void" name="act" enable="true">
+            <javadoc xml:space="preserve">Act - do whatever the Option1_Button wants to do.</javadoc>
+            <params/>
+            <throws/>
+            <body>
+                <comment xml:space="preserve">Add your action code here.</comment>
+                <if condition="Greenfoot.mouseMoved(this)" condition-java="Greenfoot.mouseMoved(this)" enable="true">
+                    <ifStatements>
+                        <call expression="setImage(&quot;Option1_Button_Highlighted.png&quot;)" expression-java="setImage(&quot;Option1_Button_Highlighted.png&quot;)" enable="true"/>
+                    </ifStatements>
+                </if>
+                <if condition="Greenfoot.mouseMoved(getWorld())" condition-java="Greenfoot.mouseMoved(getWorld())" enable="true">
+                    <ifStatements>
+                        <call expression="setImage(&quot;Option1_Button.png&quot;)" expression-java="setImage(&quot;Option1_Button.png&quot;)" enable="true"/>
+                    </ifStatements>
+                </if>
+                <if condition="Greenfoot.mouseClicked(this)" condition-java="Greenfoot.mouseClicked(this)" enable="true">
+                    <ifStatements>
+                        <variable type="World" type-java="World" name="Test_movement_Input" value="new Test_movement_Input()" value-java=" new Test_movement_Input()" enable="true"/>
+                        <call expression="Greenfoot.setWorld(Test_movement_Input)" expression-java="Greenfoot.setWorld(Test_movement_Input)" enable="true"/>
+                    </ifStatements>
+                </if>
+            </body>
+        </method>
+    </methods>
+</class>

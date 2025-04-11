@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import lang.stride.*;
 /**
  * Write a description of class Test_Background here.
  * 
@@ -16,8 +16,7 @@ public class Test_Background extends World
     public Test_Background()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 600
-        , 1); 
+        super(1080,1080, 1); 
         prepare();
     }
     
@@ -28,10 +27,10 @@ public class Test_Background extends World
     private void prepare()
     {
         Button1 button1 = new Button1();
-        addObject(button1,283,64);
+        addObject(button1,485,618);
         Button2 button2 = new Button2();
-        addObject(button2,294,159);
+        addObject(button2,485,704);
         Button3 button3 = new Button3();
-        addObject(button3,292,243);
+        addObject(button3,482,799);
     }
 }

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class name="player_in_question" extends="Actor" extends-java="Actor" enable="true" strideversion="1">
+    <javadoc xml:space="preserve"/>
+    <imports>
+        <import target="java.util.*" enable="true"/>
+        <import target="greenfoot.*" enable="true"/>
+    </imports>
+    <implements/>
+    <fields/>
+    <constructors/>
+    <methods>
+        <method access="public" type="void" type-java="void" name="act" enable="true">
+            <javadoc xml:space="preserve">Act - do whatever the player_in_question wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.</javadoc>
+            <params/>
+            <throws/>
+            <body>
+                <call expression="moveAndTurn()" expression-java="moveAndTurn()" enable="true"/>
+                <call expression="ifAtEdge()" expression-java="ifAtEdge()" enable="true"/>
+                <call expression="getPosition()" expression-java="getPosition()" enable="true"/>
+            </body>
+        </method>
+        <method access="public" type="void" type-java="void" name="getPosition" enable="true">
+            <javadoc xml:space="preserve"/>
+            <params/>
+            <throws/>
+            <body>
+                <call expression="getX()" expression-java="getX()" enable="true"/>
+                <call expression="getY()" expression-java="getY()" enable="true"/>
+            </body>
+        </method>
+        <method access="public" type="void" type-java="void" name="moveAndTurn" enable="true">
+            <javadoc xml:space="preserve"/>
+            <params/>
+            <throws/>
+            <body>
+                <if condition="Greenfoot.isKeyDown(&quot;left&quot;)" condition-java="Greenfoot.isKeyDown(&quot;left&quot;)" enable="true">
+                    <ifStatements>
+                        <call expression="setRotation(180)" expression-java="setRotation(180)" enable="true"/>
+                        <call expression="move(3)" expression-java="move(3)" enable="true"/>
+                    </ifStatements>
+                </if>
+                <if condition="Greenfoot.isKeyDown(&quot;right&quot;)" condition-java="Greenfoot.isKeyDown(&quot;right&quot;)" enable="true">
+                    <ifStatements>
+                        <call expression="setRotation(0)" expression-java="setRotation(0)" enable="true"/>
+                        <call expression="move(3)" expression-java="move(3)" enable="true"/>
+                    </ifStatements>
+                </if>
+                <if condition="Greenfoot.isKeyDown(&quot;up&quot;)" condition-java="Greenfoot.isKeyDown(&quot;up&quot;)" enable="true">
+                    <ifStatements>
+                        <comment xml:space="preserve">set orientstion then move</comment>
+                        <call expression="setRotation(270)" expression-java="setRotation(270)" enable="true"/>
+                        <call expression="move(3)" expression-java="move(3)" enable="true"/>
+                    </ifStatements>
+                </if>
+                <if condition="Greenfoot.isKeyDown(&quot;down&quot;)" condition-java="Greenfoot.isKeyDown(&quot;down&quot;)" enable="true">
+                    <ifStatements>
+                        <call expression="setRotation(90)" expression-java="setRotation(90)" enable="true"/>
+                        <call expression="move(3)" expression-java="move(3)" enable="true"/>
+                    </ifStatements>
+                </if>
+            </body>
+        </method>
+        <method access="public" type="boolean" type-java="boolean" name="ifAtEdge" enable="true">
+            <javadoc xml:space="preserve"/>
+            <params/>
+            <throws/>
+            <body>
+                <if condition="isAtEdge()==true" condition-java="isAtEdge() == true" enable="true">
+                    <ifStatements>
+                        <variable type="World" type-java="World" name="Test_Transition" value="new Test_Transition()" value-java=" new Test_Transition()" enable="true"/>
+                        <call expression="Greenfoot.setWorld(Test_Transition)" expression-java="Greenfoot.setWorld(Test_Transition)" enable="true"/>
+                    </ifStatements>
+                </if>
+                <return value="false" value-java="false" enable="true"/>
+            </body>
+        </method>
+    </methods>
+</class>
