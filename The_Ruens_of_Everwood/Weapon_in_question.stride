@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class name="Weapon_in_question" extends="Actor" extends-java="Actor" enable="true" strideversion="1">
+    <javadoc xml:space="preserve"/>
+    <imports>
+        <import target="java.util.*" enable="true"/>
+        <import target="greenfoot.*" enable="true"/>
+    </imports>
+    <implements/>
+    <fields>
+        <variable access="private" type="int" type-java="int" name="lifeTime" value="10" value-java="10" enable="true"/>
+    </fields>
+    <constructors>
+        <constructor access="public" enable="true">
+            <javadoc xml:space="preserve"/>
+            <params>
+                <params type="int" type-java="int" name="rotation"/>
+            </params>
+            <throws/>
+            <body/>
+        </constructor>
+    </constructors>
+    <methods>
+        <method access="public" type="void" type-java="void" name="act" enable="true">
+            <javadoc xml:space="preserve">Act - do whatever the Weapon_in_question wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.</javadoc>
+            <params/>
+            <throws/>
+            <body>
+                <assign dest="lifeTime" dest-java="lifeTime" src="lifeTime-1" src-java="lifeTime - 1" enable="true"/>
+                <call expression="setLocation(getX()+3,getY())" expression-java="setLocation(getX() + 3, getY())" enable="true"/>
+                <if condition="lifeTime&lt;=0" condition-java="lifeTime &lt;= 0" enable="true">
+                    <ifStatements>
+                        <call expression="getWorld().removeObject(this)" expression-java="getWorld().removeObject(this)" enable="true"/>
+                    </ifStatements>
+                </if>
+            </body>
+        </method>
+        <comment xml:space="preserve">public void positionIt(){ player_in_question.getX();  }</comment>
+    </methods>
+</class>

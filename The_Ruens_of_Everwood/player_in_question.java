@@ -1,4 +1,3 @@
-// WARNING: This file is auto-generated and any changes to it will be overwritten
 import lang.stride.*;
 import java.util.*;
 import greenfoot.*;
@@ -8,6 +7,18 @@ import greenfoot.*;
  */
 public class player_in_question extends Actor
 {
+    private int weaponCooldown;
+    private int weaponSecondCooldown;
+
+    /**
+     * 
+     */
+    public player_in_question()
+    {
+        /* increase the first Cooldown to swing slower and lower it to swing faster*/
+        weaponCooldown = 25;
+        weaponSecondCooldown = 0;
+    }
 
     /**
      * Act - do whatever the player_in_question wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
@@ -15,8 +26,18 @@ public class player_in_question extends Actor
     public void act()
     {
         moveAndTurn();
-        ifAtEdge();
         getPosition();
+        wallCollision();
+        attack();
+        weaponSecondCooldown = weaponSecondCooldown + 1;
+    }
+
+    /**
+     * 
+     */
+    public void setOveralswingCooldown(int swingTime)
+    {
+        weaponCooldown = swingTime;
     }
 
     /**
@@ -55,12 +76,40 @@ public class player_in_question extends Actor
     /**
      * 
      */
-    public boolean ifAtEdge()
+    public void wallCollision()
     {
-        if (isAtEdge() == true) {
-            World Test_Transition =  new  Test_Transition();
-            Greenfoot.setWorld(Test_Transition);
+        Actor wall = getOneIntersectingObject(wall.class);
+        if (wall != null) {
+            if (Greenfoot.isKeyDown("down")) {
+                setRotation(90);
+                move(-3);
+            }
+            if (Greenfoot.isKeyDown("left")) {
+                setRotation(180);
+                move(-3);
+            }
+            if (Greenfoot.isKeyDown("right")) {
+                setRotation(0);
+                move(-3);
+            }
+            if (Greenfoot.isKeyDown("up")) {
+                setRotation(270);
+                move(-3);
+            }
         }
-        return false;
+    }
+
+    /**
+     * 
+     */
+    public void attack()
+    {
+        if (Greenfoot.isKeyDown("E")) {
+            if (weaponSecondCooldown >= weaponCooldown) {
+                Weapon_in_question w =  new  Weapon_in_question(getRotation());
+                getWorld().addObject(w, getX() + 3, getY());
+                weaponSecondCooldown = 0;
+            }
+        }
     }
 }

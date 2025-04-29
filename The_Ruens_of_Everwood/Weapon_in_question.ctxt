@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=Weapon_in_question
+comment0.text=\r\n\ \r\n
+comment1.params=rotation
+comment1.target=Weapon_in_question(int)
+comment1.text=\r\n\ \r\n
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ Weapon_in_question\ wants\ to\ do.\ This\ method\ is\ called\ whenever\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+numComments=3

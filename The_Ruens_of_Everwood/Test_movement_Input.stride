@@ -6,7 +6,9 @@
         <import target="greenfoot.*" enable="true"/>
     </imports>
     <implements/>
-    <fields/>
+    <fields>
+        <variable access="private" type="player_in_question" type-java="player_in_question" name="player" enable="true"/>
+    </fields>
     <constructors>
         <constructor access="public" enable="true">
             <javadoc xml:space="preserve">Constructor for objects of class Test_movement_Input.</javadoc>
@@ -14,25 +16,26 @@
             <throws/>
             <delegate target="super" params="600,600,1" params-java="600, 600, 1"/>
             <body>
-                <call expression="ifAtEdge()" expression-java="ifAtEdge()" enable="false"/>
+                <call expression="setPaintOrder(player_in_question.class,Weapon_in_question.class)" expression-java="setPaintOrder(player_in_question.class, Weapon_in_question.class)" enable="true"/>
+                <assign dest="player" dest-java="player" src="new player_in_question()" src-java=" new player_in_question()" enable="true"/>
+                <call expression="addObject(player,200,200)" expression-java="addObject(player, 200, 200)" enable="true"/>
+                <call expression="ifAtEdge()" expression-java="ifAtEdge()" enable="true"/>
             </body>
         </constructor>
     </constructors>
     <methods>
-        <method access="public" type="boolean" type-java="boolean" name="ifAtEdge" enable="false">
+        <method access="public" type="void" type-java="void" name="ifAtEdge" enable="true">
             <javadoc xml:space="preserve"/>
             <params/>
             <throws/>
             <body>
-                <variable type="Actor" type-java="Actor" name="player_in_question" value="new player_in_question()" value-java=" new player_in_question()" enable="false"/>
-                <if condition="" condition-java="" enable="false">
+                <if condition="player.getX()&gt;=getWidth()-10" condition-java="player.getX() &gt;= getWidth() - 10" enable="true">
                     <ifStatements>
-                        <variable type="World" type-java="World" name="Test_Transition" value="new Test_Transition()" value-java=" new Test_Transition()" enable="false"/>
-                        <call expression="Greenfoot.setWorld(Test_Transition)" expression-java="Greenfoot.setWorld(Test_Transition)" enable="false"/>
-                        <return value="true" value-java="true" enable="false"/>
+                        <variable type="int" type-java="int" name="savedY" value="player.getY()" value-java="player.getY()" enable="true"/>
+                        <variable type="World" type-java="World" name="Tests_transition" value="new Test_Transition(player,10,savedY)" value-java=" new Test_Transition(player, 10, savedY)" enable="true"/>
+                        <call expression="Greenfoot.setWorld(Tests_transition)" expression-java="Greenfoot.setWorld(Tests_transition)" enable="true"/>
                     </ifStatements>
                 </if>
-                <return value="false" value-java="false" enable="false"/>
             </body>
         </method>
     </methods>

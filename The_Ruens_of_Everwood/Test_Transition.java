@@ -8,22 +8,15 @@ import greenfoot.*;
  */
 public class Test_Transition extends World
 {
+    private player_in_question player;
 
     /**
      * Constructor for objects of class Test_Transition.
      */
-    public Test_Transition()
+    public Test_Transition(player_in_question playerFromPrevious, int newX, int newY)
     {
         super(600, 600, 1);
-        setPlayer();
-    }
-
-    /**
-     * 
-     */
-    public void setPlayer()
-    {
-        Actor player_in_question =  new  player_in_question();
-        addObject(player_in_question, 0, 100);
+        this.player = playerFromPrevious;
+        addObject(player, newX, newY);
     }
 }

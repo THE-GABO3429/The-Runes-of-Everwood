@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class name="Test_Background" extends="World" extends-java="World" enable="true" strideversion="1">
+    <javadoc xml:space="preserve">Write a description of class Test_Background here.
+@author (your name) @version (a version number or a date)</javadoc>
+    <imports>
+        <import target="greenfoot.*" enable="true"/>
+    </imports>
+    <implements/>
+    <fields/>
+    <constructors>
+        <comment xml:space="preserve">(World, Actor, GreenfootImage, Greenfoot and MouseInfo)</comment>
+        <constructor access="public" enable="true">
+            <javadoc xml:space="preserve">Constructor for objects of class Test_Background.</javadoc>
+            <params/>
+            <throws/>
+            <delegate target="super" params="600,600,1" params-java="600, 600, 1"/>
+            <body>
+                <comment xml:space="preserve">Create a new world with 600x400 cells with a cell size of 1x1 pixels.</comment>
+                <call expression="prepare()" expression-java="prepare()" enable="true"/>
+            </body>
+        </constructor>
+    </constructors>
+    <methods>
+        <method access="private" type="void" type-java="void" name="prepare" enable="true">
+            <javadoc xml:space="preserve">Prepare the world for the start of the program. That is: create the initial objects and add them to the world.</javadoc>
+            <params/>
+            <throws/>
+            <body>
+                <variable type="Button1" type-java="Button1" name="button1" value="new Button1()" value-java=" new Button1()" enable="true"/>
+                <call expression="addObject(button1,getWidth()/2,getHeight()/6)" expression-java="addObject(button1, getWidth() / 2, getHeight() / 6)" enable="true"/>
+                <variable type="Button2" type-java="Button2" name="button2" value="new Button2()" value-java=" new Button2()" enable="true"/>
+                <call expression="addObject(button2,getWidth()/2,getHeight()/6*3)" expression-java="addObject(button2, getWidth() / 2, getHeight() / 6 * 3)" enable="true"/>
+                <variable type="Button3" type-java="Button3" name="button3" value="new Button3()" value-java=" new Button3()" enable="true"/>
+                <call expression="addObject(button3,getWidth()/2,getHeight()/6*5)" expression-java="addObject(button3, getWidth() / 2, getHeight() / 6 * 5)" enable="true"/>
+            </body>
+        </method>
+    </methods>
+</class>

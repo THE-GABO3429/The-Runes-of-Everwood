@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class name="VissualLayers" extends="Actor" extends-java="Actor" enable="true" strideversion="1">
+    <javadoc xml:space="preserve"/>
+    <imports>
+        <import target="java.util.*" enable="true"/>
+        <import target="greenfoot.*" enable="true"/>
+    </imports>
+    <implements/>
+    <fields/>
+    <constructors>
+        <constructor access="public" enable="true">
+            <javadoc xml:space="preserve">Act - do whatever the VissualLayers wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.</javadoc>
+            <params/>
+            <throws/>
+            <body>
+                <variable type="GreenfootImage" type-java="GreenfootImage" name="base" value="new GreenfootImage(&quot;bread.png&quot;)" value-java=" new GreenfootImage(&quot;bread.png&quot;)" enable="true"/>
+                <variable type="GreenfootImage" type-java="GreenfootImage" name="overlay" value="new GreenfootImage(&quot;wombat.png&quot;)" value-java=" new GreenfootImage(&quot;wombat.png&quot;)" enable="true"/>
+                <call expression="overlay.setTransparency(180)" expression-java="overlay.setTransparency(180)" enable="true"/>
+                <call expression="base.drawImage(overlay,0,0)" expression-java="base.drawImage(overlay, 0, 0)" enable="true"/>
+                <call expression="setImage(base)" expression-java="setImage(base)" enable="true"/>
+            </body>
+        </constructor>
+    </constructors>
+    <methods/>
+</class>
